@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree Laxmi Mall - Fashion E-commerce</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        :root {
+            --primary-orange: #FF7E00;
+            --light-orange: #FFF4E6;
+            --dark-text: #2D2D2D;
+            --light-bg: #FFF8F0;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: var(--primary-orange);
+            color: white;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        /* Navbar */
+        .navbar {
+            padding: 15px 0;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            color: var(--dark-text);
+        }
+
+        .logo-circle {
+            width: 45px;
+            height: 45px;
+            background: var(--primary-orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+
+        .nav-link {
+            color: var(--dark-text);
+            font-weight: 500;
+            margin: 0 10px;
+        }
+
+        /* Active nav link styling */
+        .navbar-nav .nav-link.active {
+            color: var(--primary-orange) !important;
+            font-weight: 700;
+        }
+
+        /* Hover effect for better UX */
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-orange);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--light-orange) 0%, #FFE8CC 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 span {
+            display: block;
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        .hero-content p {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .hero-image {
+            position: relative;
+            text-align: center;
+        }
+
+        .hero-circle {
+            width: 350px;
+            height: 450px;
+            background: var(--primary-orange);
+            border-radius: 50%;
+            position: absolute;
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        .decorative-dots {
+            position: absolute;
+            color: var(--primary-orange);
+            font-size: 30px;
+        }
+
+        /* Discover Section */
+        .discover-section {
+            padding: 60px 0;
+        }
+
+        .discover-section h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+
+        .discover-section h2 span {
+            font-weight: 300;
+        }
+
+        .product-card {
+            background: #F9EC82;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-image1 {
+            background-image: url("img/disc1.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 300px;
+            border-radius: 15px;
+
+        }
+
+        .product-image1 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-image2 {
+            background-image: url("img/disc2.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 300px;
+            border-radius: 15px;
+
+        }
+
+        .product-image2 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-image3 {
+            background-image: url("img/disc3.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 300px;
+            border-radius: 15px;
+
+        }
+
+        .product-image3 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-image4 {
+            background-image: url("img/disc4.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 300px;
+            border-radius: 15px;
+
+        }
+
+        .product-image4 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        .badge-new {
+            background: white;
+            color: var(--primary-orange);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        }
+
+
+        /* About Section */
+        .about-section {
+            padding: 40px 0;
+            background: #FFF5EB;
+        }
+
+        .about-box {
+            background: white;
+            border: 3px solid var(--dark-text);
+            padding: 50px;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .btn-read-more {
+            background: var(--primary-orange);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            border: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-read-more:hover {
+            background: #E38B50;
+            transform: scale(1.05);
+        }
+
+        /* Top Rating Section */
+        .rating-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .rating-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .rating-tab {
+            cursor: pointer;
+            padding: 10px 20px;
+            font-weight: 600;
+            color: #999;
+            transition: all 0.3s;
+        }
+
+        .rating-tab.active {
+            color: var(--primary-orange);
+            border-bottom: 3px solid var(--primary-orange);
+        }
+
+        .rating-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .rating-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .rating-image {
+            width: 100%;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Specific images for each card */
+        .rating-image1 {
+            background-image: url("img/western.png");
+        }
+
+        .rating-image2 {
+            background-image: url("img/gown.png");
+        }
+
+        .rating-image3 {
+            background-image: url("img/saree.png");
+        }
+
+        /* Kids category images */
+        .rating-image-kids1 {
+            background-image: url("https://images.unsplash.com/photo-1519457431-44ccd64a579b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80");
+        }
+
+        .rating-image-kids2 {
+            background-image: url("img/kids_dress.jpg");
+            background-repeat: no-repeat;
+            background-position: center !important;
+        }
+
+        .rating-image-kids3 {
+            background-image: url("img/kids_jeans.jpg");
+            background-repeat: no-repeat;
+            background-position: center !important;
+        }
+
+        /* Women category images */
+        .rating-image-women1 {
+            background-image: url("img/western.png");
+        }
+
+        .rating-image-women2 {
+            background-image: url("img/gown.png");
+        }
+
+        .rating-image-women3 {
+            background-image: url("img/saree.png");
+        }
+
+        /* Jewellery category images */
+        .rating-image-jewellery1 {
+            background-image: url("img/jewellery1.jpg");
+            background-repeat: no-repeat;
+            background-position: center !important;
+        }
+
+        .rating-image-jewellery2 {
+            background-image: url("img/jewellery2.jpg");
+            background-repeat: no-repeat;
+            background-position: center !important;
+        }
+
+        .rating-image-jewellery3 {
+            background-image: url("img/jewellery3.jpg");
+            background-repeat: no-repeat;
+            background-position: center !important;
+        }
+
+        .rating-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .left-group {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .item-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin: 0;
+            text-align: left;
+        }
+
+        .stars {
+            font-size: 20px;
+            font-weight: 600;
+            color: #ffb400;
+            margin-top: 4px;
+            text-align: left;
+        }
+
+        .price {
+            font-size: 22px;
+            font-weight: 700;
+            align-self: center;
+        }
+
+        .color-dots {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .color-dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        /* Product categories */
+        .product-category {
+            display: none;
+        }
+
+        .product-category.active {
+            display: flex;
+        }
+
+        /* Exploring Section */
+        .category-card {
+            position: relative;
+            height: 350px;
+            border-radius: 15px;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            background-color: #ffff;
+            /* border-color: #e5e5e5 !important; */
+        }
+
+        .exploring-section {
+            background-color: #FFF5EB;
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+
+
+        /* Background Images */
+        .category1 {
+            background-image: url("img/img_western.png");
+        }
+
+        .category2 {
+            background-image: url("img/img_dress.png");
+        }
+
+        .category3 {
+            background-image: url("img/navratri.png");
+        }
+
+        /* Overlay */
+        .category-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 25px;
+            background: #ffff;
+            border-color: #e5e5e5;
+            text-align: center;
+            /* backdrop-filter: blur(4px); */
+        }
+
+        .category-overlay h4 {
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .category-overlay p {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #444;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            padding: 80px 0 90px;
+            /* Add more bottom padding */
+            text-align: center;
+            position: relative;
+        }
+
+        .testimonial-slider {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 10px;
+            /* Space for dots */
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-slide {
+            flex: 0 0 100%;
+            padding: 0 15px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin: 30px 0;
+        }
+
+        .testimonial-avatar1 {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            /* background: var(--primary-orange); */
+            background-image: url("img/per1.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0 auto 20px;
+        }
+
+        .testimonial-avatar2 {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            /* background: var(--primary-orange); */
+            background-image: url("img/per3.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0 auto 20px;
+        }
+
+        .testimonial-avatar3 {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            /* background: var(--primary-orange); */
+            background-image: url("img/per2.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0 auto 20px;
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-top: 25px;
+            height: 25px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: all 0.3s;
+            flex-shrink: 0;
+            display: block;
+            position: relative;
+        }
+
+        .testimonial-dot.active {
+            background: var(--primary-orange);
+            transform: scale(1.2);
+        }
+
+        .testimonial-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+
+        .testimonial-arrow:hover {
+            background: var(--primary-orange);
+            color: white;
+        }
+
+        .testimonial-arrow.prev {
+            left: 10px;
+        }
+
+        .testimonial-arrow.next {
+            right: 10px;
+        }
+
+        /* Blog Section */
+        .blog-section {
+            padding: 80px 0;
+            background: #FFF5EB;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-image1 {
+            height: 250px;
+            overflow: hidden;
+            background-image: url(img/img1.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .blog-image1 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-image2 {
+            height: 150px;
+            overflow: hidden;
+            background-image: url(img/img2.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .blog-image2 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-image3 {
+            height: 150px;
+            overflow: hidden;
+            background-image: url(img/img3.png);
+            background-size: cover;
+            /* background-position: center; */
+            background-repeat: no-repeat;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .blog-image3 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 25px;
+        }
+
+        /* Newsletter */
+        .newsletter-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 20px;
+            border: 2px solid var(--primary-orange);
+            border-radius: 25px;
+        }
+
+        .btn-subscribe {
+            background: var(--primary-orange);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            border: none;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-orange);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        footer h5 {
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .hero-image {
+                position: relative;
+                text-align: center;
+            }
+
+            .my-img {
+                width: 100%;
+                height: auto;
+            }
+
+            .cloth {
+                gap: 20px;
+            }
+
+            .about-box {
+                padding: 30px;
+            }
+
+            .rating-tabs {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .about-mob {
+                gap: 20px;
+            }
+
+            .testimonial-arrow {
+                display: none;
+            }
+
+            /* Blog section mobile fixes */
+            .blog-card .row {
+                flex-direction: column;
+            }
+
+            .blog-card .col-md-4 {
+                width: 100%;
+            }
+
+            .blog-image2,
+            .blog-image3 {
+                height: 200px;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar .row {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                text-align: center;
+            }
+
+            .top-bar .col-md-4 {
+                flex: 1;
+                padding: 0 5px;
+                font-size: 12px;
+            }
+
+            .top-bar .text-center,
+            .top-bar .text-end {
+                text-align: center !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4"><i class="fas fa-shipping-fast"></i> Free Shipping</div>
+                <div class="col-md-4 text-center"><i class="fas fa-phone"></i> +123 456 789</div>
+                <div class="col-md-4 text-end"><i class="fas fa-envelope"></i> support@mail.com</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <div class="logo-circle">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <div>
+                    <strong>SHREE LAXMI</strong><br>
+                    <small>MALL</small>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+                <div class="d-flex">
+                    <a href="#" class="nav-link"><i class="fas fa-search"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-heart"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center cloth">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <p>VISIT ALL OF OUR PRODUCTS</p>
+                        <h1>
+                            <span>New Collection</span>
+                        </h1>
+                        <h5>FIND WHAT BEST OPTIONS FOR YOU</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.</p>
+                        <button class="btn-read-more">Shop Now</button>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img src="img/img_banner_home.png" class="my-img" alt="">
+                        <!-- <div class="hero-circle"></div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discover Section -->
+    <section class="discover-section">
+        <div class="container">
+            <h2><span>Discover more.</span> <strong>Good things are waiting for you</strong></h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="product-card">
+                        <span class="badge-new">New Arrival</span>
+                        <div class="product-image1"></div>
+                        <h5 class="mt-3">Shop The Latest Items From Top Brands</h5>
+                        <button class="btn-read-more mt-1">Shop Now</button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="product-card" style="background: #FFE8CC;">
+                        <span class="badge-new">New Arrival</span>
+                        <div class="product-image2"></div>
+                        <h5 class="mt-3">Shop The Latest Items From Top Brands</h5>
+                        <button class="btn-read-more mt-1">Shop Now</button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="product-card">
+                        <span class="badge-new">New Arrival</span>
+                        <div class="product-image3"></div>
+                        <h5 class="mt-3">Shop The Latest Items From Top Brands</h5>
+                        <button class="btn-read-more mt-1">Shop Now</button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="product-card" style="background: #FFE8CC;">
+                        <span class="badge-new">New Arrival</span>
+                        <div class="product-image4"></div>
+                        <h5 class="mt-3">Shop The Latest Items From Top Brands</h5>
+                        <button class="btn-read-more mt-1">Shop Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="row align-items-center about-mob">
+
+                <!-- LEFT IMAGE -->
+                <div class="col-lg-6">
+                    <div class="position-relative">
+                        <img src="img/img_about-Photoroom.png" alt="" class="img-fluid" style="text-align: center;">
+                    </div>
+                </div>
+
+                <!-- RIGHT CONTENT -->
+                <div class="col-lg-6">
+                    <div class="about-box">
+                        <h2>About Us.</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation.
+                        </p>
+                        <button class="btn-read-more">Read More</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Top Rating Section -->
+    <section class="rating-section">
+        <div class="container">
+            <h2>Top Rating Cloths.</h2>
+            <div class="rating-tabs">
+                <div class="rating-tab active" data-category="kids">Kids</div>
+                <div class="rating-tab" data-category="women">Women</div>
+                <div class="rating-tab" data-category="jewellery">Jewellery</div>
+            </div>
+
+            <!-- Kids Category -->
+            <div class="row product-category active" id="kids-category">
+                <!-- Card 1 -->
+                <div class="col-md-4">
+                    <div class="rating-card">
+                        <div class="rating-image rating-image-kids1"></div>
+                        <div class="rating-top-row">
+                            <div class="left-group">
+                                <h5 class="item-title">Kids T-Shirt</h5>
+                                <div class="stars">★★★★☆</div>
+                            </div>
+                            <div class="price">₹1,200</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-4">
+                    <div class="rating-card">
+                        <div class="rating-image rating-image-kids2"></div>
+                        <div class="rating-top-row">
+                            <div class="left-group">
+                                <h5 class="item-title">Kids Dress</h5>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                            <div class="price">₹2,500</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-md-4">
+                    <div class="rating-card">
+                        <div class="rating-image rating-image-kids3"></div>
+                        <div class="rating-top-row">
+                            <div class="left-group">
+                                <h5 class="item-title">Kids Jeans</h5>
+                                <div class="stars">★★★★☆</div>
+                            </div>
+                            <div class="price">₹1,800</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Women Category -->
+            <div class="row product-category" id="women-category">
+                <!-- Card 1 -->
+                <div class="col-md-4">
+                    <div class="rating-card">
+                        <div class="rating-image rating-image-women1"></div>
+                        <div class="rating-top-row">
+                            <div class="left-group">
+                                <h5 class="item-title">Western</h5>
+                                <div class="stars">★★★★☆</div>
+                            </div>
+                            <div class="price">₹7,500</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-4">
+                    <div class="rating-card">
+                        <div class="rating-image rating-image-women2"></div>
+                        <div class="rating-top-row">
+                            <div class="left-group">
+                                <h5 class="item-title">Gown</h5>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                            <div class="price">₹7,500</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-md-4">
+                    <div class="rating-card">
+                        <div class="rating-image rating-image-women3"></div>
+                        <div class="rating-top-row">
+                            <div class="left-group">
+                                <h5 class="item-title">Sarees</h5>
+                                <div class="stars">★★★★☆</div>
+                            </div>
+                            <div class="price">₹7,500</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jewellery Category -->
+            <div class="row product-category" id="jewellery-category">
+                <!-- Card 1 -->
+                <div class="col-md-4">
+                    <div class="rating-card">
+                        <div class="rating-image rating-image-jewellery1"></div>
+                        <div class="rating-top-row">
+                            <div class="left-group">
+                                <h5 class="item-title">Gold Necklace</h5>
+                                <div class="stars">★★★★☆</div>
+                            </div>
+                            <div class="price">₹15,000</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-4">
+                    <div class="rating-card">
+                        <div class="rating-image rating-image-jewellery2"></div>
+                        <div class="rating-top-row">
+                            <div class="left-group">
+                                <h5 class="item-title">Silver Earrings</h5>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                            <div class="price">₹3,500</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-md-4">
+                    <div class="rating-card">
+                        <div class="rating-image rating-image-jewellery3"></div>
+                        <div class="rating-top-row">
+                            <div class="left-group">
+                                <h5 class="item-title">Diamond Ring</h5>
+                                <div class="stars">★★★★☆</div>
+                            </div>
+                            <div class="price">₹25,000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Exploring Section -->
+    <section class="exploring-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Explore Categories</h2>
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="category-card category1">
+                        <div class="category-overlay">
+                            <h4>Western Wear</h4>
+                            <p>Stylish everyday outfits for a chic modern look.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="category-card category2">
+                        <div class="category-overlay">
+                            <h4>Dress</h4>
+                            <p>Elegant designer gowns crafted for special celebrations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="category-card category3">
+                        <div class="category-overlay">
+                            <h4>Navratri</h4>
+                            <p>Vibrant ethnic styles perfect for festive occasions.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2>Our Testimonials.</h2>
+            <div class="testimonial-slider">
+                <button class="testimonial-arrow prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="testimonial-arrow next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <div class="testimonial-track">
+                    <!-- Slide 1 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-avatar1"></div>
+                            <p class="fst-italic">"There are many variations of passages of Lorem Ipsum available, but
+                                the
+                                majority have suffered alteration in some form, by injected humour, or randomised words
+                                which don't look even slightly believable."</p>
+                            <h5>Harold Patel</h5>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-avatar2"></div>
+                            <p class="fst-italic">"I absolutely love the quality of clothes from Shree Laxmi Mall. The
+                                fabrics are premium and the designs are trendy. My friends always ask me where I shop!"
+                            </p>
+                            <h5>Priya Sharma</h5>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-avatar3"></div>
+                            <p class="fst-italic">"The customer service is exceptional. They helped me find the perfect
+                                outfit for my sister's wedding. The delivery was prompt and the packaging was
+                                beautiful."</p>
+                            <h5>Rahul Verma</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-nav">
+                    <div class="testimonial-dot active"></div>
+                    <div class="testimonial-dot"></div>
+                    <div class="testimonial-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="container">
+            <h2><span>The latest news.</span> <strong>From Our Blog</strong></h2>
+            <div class="row" style="margin-top: 38px;">
+                <div class="col-md-6">
+                    <div class="blog-card">
+                        <div class="blog-image1"></div>
+                        <div class="blog-content">
+                            <h5>Trends in a digital agency fast or top exciting and typewriting</h5>
+                            <p><i class="fas fa-user"></i> Peter Reid • 20 Nov 2023</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="blog-card mb-3">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <div class="blog-image2"></div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="blog-content">
+                                    <h6>Beautiful, popular. Lorem ipsum dolor set.</h6>
+                                    <p><i class="fas fa-user"></i> Dan Wick • 22 Nov 2023</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-card mb-3">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <div class="blog-image3"></div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="blog-content">
+                                    <h6>Superfish text typogon. Lorem ipsum dolor</h6>
+                                    <p><i class="fas fa-user"></i> Jane Doe • 23 Nov 2023</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <div class="container">
+            <h2>Our Newsletter.</h2>
+            <div class="newsletter-form">
+                <input type="email" placeholder="Your email address" class="form-control">
+                <button class="btn-subscribe">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="navbar-brand text-white mb-3">
+                        <div class="logo-circle" style="background-color: #fff;">
+                            <i class="fas fa-shopping-bag" style="color: #FF7E00;"></i>
+                        </div>
+                        <div>
+                            <strong>SHREE LAXMI</strong><br>
+                            <small>MALL</small>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.</p>
+                </div>
+                <div class="col-md-2">
+                    <h5>Shop</h5>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Checkout</a></li>
+                        <li><a href="#">Cart</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact</h5>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Street Name, City, Country</p>
+                    <p><i class="fas fa-phone"></i> +123 456 789</p>
+                    <p><i class="fas fa-envelope"></i> info@example.com</p>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.3);">
+            <div class="text-center">
+                <p style="margin-bottom: 0rem !important;">&copy; 2023 Shree Laxmi Mall. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Rating tabs functionality
+        document.querySelectorAll('.rating-tab').forEach(tab => {
+            tab.addEventListener('click', function () {
+                // Remove active class from all tabs
+                document.querySelectorAll('.rating-tab').forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                this.classList.add('active');
+
+                // Hide all product categories
+                document.querySelectorAll('.product-category').forEach(category => {
+                    category.classList.remove('active');
+                });
+
+                // Show the selected category
+                const categoryId = this.getAttribute('data-category') + '-category';
+                document.getElementById(categoryId).classList.add('active');
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Testimonial slider functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const track = document.querySelector('.testimonial-track');
+            const slides = document.querySelectorAll('.testimonial-slide');
+            const dots = document.querySelectorAll('.testimonial-dot');
+            const prevBtn = document.querySelector('.testimonial-arrow.prev');
+            const nextBtn = document.querySelector('.testimonial-arrow.next');
+
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+
+            // Initialize slider
+            updateSlider();
+
+            // Next slide function
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateSlider();
+            }
+
+            // Previous slide function
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                updateSlider();
+            }
+
+            // Update slider position and active dot
+            function updateSlider() {
+                track.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+                // Update active dot
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+            }
+
+            // Event listeners
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+
+            // Dot navigation
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentSlide = index;
+                    updateSlider();
+                });
+            });
+
+            // Auto slide (optional)
+            setInterval(nextSlide, 5000);
+        });
+    </script>
+</body>
+
+</html>
