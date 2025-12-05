@@ -274,3 +274,43 @@ window.addEventListener('load', function() {
         });
     }
 });
+
+// Blog Pagination Functionality
+        function initializeBlogPagination() {
+            const pageNumbers = document.querySelectorAll('.page-number');
+            const blogPages = document.querySelectorAll('.blog-page');
+            
+            pageNumbers.forEach(page => {
+                page.addEventListener('click', function() {
+                    // Remove active class from all pages
+                    pageNumbers.forEach(p => p.classList.remove('active'));
+                    
+                    // Add active class to clicked page
+                    this.classList.add('active');
+                    
+                    // Get page number
+                    const pageNum = this.getAttribute('data-page');
+                    
+                    // Hide all blog pages
+                    blogPages.forEach(page => {
+                        page.style.display = 'none';
+                    });
+                    
+                    // Show selected blog page
+                    const selectedPage = document.getElementById(`page-${pageNum}`);
+                    if (selectedPage) {
+                        selectedPage.style.display = 'block';
+                    }
+                    
+                    // Scroll to top of blog section
+                    document.querySelector('.blog-content-section').scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        }
+
+        // DOM ready पर function call करें
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeBlogPagination();
+        });
