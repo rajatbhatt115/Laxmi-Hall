@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree Laxmi Mall - Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4"><i class="fas fa-shipping-fast"></i> Free Shipping</div>
+                <div class="col-md-4 text-center"><i class="fas fa-phone"></i> +123 456 789</div>
+                <div class="col-md-4 text-end"><i class="fas fa-envelope"></i> support@mail.com</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <div class="logo-circle">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <div>
+                    <strong>SHREE LAXMI</strong><br>
+                    <small>MALL</small>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex">
+                    <a href="#" class="nav-link"><i class="fas fa-search"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-heart"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center cloth">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <p>VISIT ALL OF OUR PRODUCTS</p>
+                        <h1>
+                            <span>Shop</span>
+                        </h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.</p>
+                        <!-- <button class="btn-read-more">Shop Now</button> -->
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image-shop">
+                        <img src="img/img_banner_shop.png" class="my-img" style="width: 65%; height: auto;" alt="About Us Banner">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Filter & Display Section -->
+    <section class="filter-section">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <p class="section-subtitle">Browse and filter our exclusive collection</p>
+            <div class="filter-container">
+                <!-- Price Filter -->
+                <div class="filter-dropdown price-filter">
+                    <button class="filter-btn" onclick="toggleFilter('priceMenu')">
+                        <span><i class="fas fa-rupee-sign"></i> Price</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="filter-menu" id="priceMenu">
+                        <div class="filter-option">
+                            <input type="checkbox" id="price1" data-filter="price" value="under-1000">
+                            <label for="price1">Under ₹1000</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="price2" data-filter="price" value="1000-2000">
+                            <label for="price2">₹1000 - ₹2000</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="price3" data-filter="price" value="2000-3000">
+                            <label for="price3">₹2000 - ₹3000</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="price4" data-filter="price" value="above-3000">
+                            <label for="price4">Above ₹3000</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categories Filter (Updated) -->
+                <div class="filter-dropdown">
+                    <button class="filter-btn" onclick="toggleFilter('categoriesMenu')">
+                        <span><i class="fas fa-th-large"></i> Categories</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="filter-menu" id="categoriesMenu">
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat1" data-filter="category" value="Female">
+                            <label for="cat1">Female</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat2" data-filter="category" value="Kids">
+                            <label for="cat2">Kids</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat3" data-filter="category" value="Male">
+                            <label for="cat3">Male</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat4" data-filter="category" value="Jewellery">
+                            <label for="cat4">Jewellery</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sizes Filter -->
+                <div class="filter-dropdown">
+                    <button class="filter-btn" onclick="toggleFilter('sizesMenu')">
+                        <span><i class="fas fa-ruler"></i> Sizes</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="filter-menu" id="sizesMenu">
+                        <div class="filter-option">
+                            <input type="checkbox" id="size1" data-filter="size" value="S">
+                            <label for="size1">S</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="size2" data-filter="size" value="M">
+                            <label for="size2">M</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="size3" data-filter="size" value="L">
+                            <label for="size3">L</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="size4" data-filter="size" value="XL">
+                            <label for="size4">XL</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sort Order Filter -->
+                <div class="filter-dropdown">
+                    <button class="filter-btn" onclick="toggleFilter('sortMenu')">
+                        <span><i class="fas fa-sort"></i> Sort Order</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="filter-menu" id="sortMenu">
+                        <div class="filter-option">
+                            <input type="radio" name="sort" id="sort1" value="popularity" checked>
+                            <label for="sort1">Popularity</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="radio" name="sort" id="sort2" value="price-low">
+                            <label for="sort2">Price: Low to High</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="radio" name="sort" id="sort3" value="price-high">
+                            <label for="sort3">Price: High to Low</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="radio" name="sort" id="sort4" value="newest">
+                            <label for="sort4">Newest First</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Active Filters Display -->
+            <div class="filter-status" id="filterStatus">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <small class="text-muted">Active Filters:</small>
+                    <button class="btn btn-sm btn-link text-danger p-0" onclick="clearAllFilters()">Clear All</button>
+                </div>
+                <div class="active-filters" id="activeFilters"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Display Section -->
+    <section class="products-section">
+        <div class="container">
+            <div class="row" id="productsContainer">
+                <!-- Products will be dynamically filtered -->
+            </div>
+            
+            <!-- No Results Message -->
+            <div class="no-results" id="noResults">
+                <i class="fas fa-search fa-3x text-muted mb-3"></i>
+                <h4>No products found</h4>
+                <p class="text-muted">Try adjusting your filters to find what you're looking for.</p>
+                <button class="btn-read-more mt-3" onclick="clearAllFilters()">Clear All Filters</button>
+            </div>
+            
+            <!-- Pagination - Simplified without arrows -->
+            <div class="products-pagination" id="productsPagination">
+                <!-- Pagination will be dynamically generated -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="navbar-brand text-white mb-3">
+                        <div class="logo-circle" style="background-color: #fff;">
+                            <i class="fas fa-shopping-bag" style="color: #FF7E00;"></i>
+                        </div>
+                        <div>
+                            <strong>SHREE LAXMI</strong><br>
+                            <small>MALL</small>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.</p>
+                </div>
+                <div class="col-md-2">
+                    <h5>Shop</h5>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Checkout</a></li>
+                        <li><a href="#">Cart</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact</h5>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Street Name, City, Country</p>
+                    <p><i class="fas fa-phone"></i> +123 456 789</p>
+                    <p><i class="fas fa-envelope"></i> info@example.com</p>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.3);">
+            <div class="text-center">
+                <p style="margin-bottom: 0rem !important;">&copy; 2023 Shree Laxmi Mall. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
