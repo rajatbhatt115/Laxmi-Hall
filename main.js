@@ -527,7 +527,7 @@ function getRandomAvatar() {
                 rating: 4.9,
                 image: "img/western.png",
                 isNew: true,
-                page: "product_details_dress.html"
+                page: "innerproduct.html"
             },
             {
                 id: 2,
@@ -538,7 +538,7 @@ function getRandomAvatar() {
                 rating: 4.8,
                 image: "img/img_dress.png",
                 isNew: false,
-                page: "product_details_summer_dress.html"
+                page: "innerproduct.html"
             },
             {
                 id: 3,
@@ -549,7 +549,7 @@ function getRandomAvatar() {
                 rating: 4.9,
                 image: "img/img_western.png",
                 isNew: true,
-                page: "product_details_party_wear.html"
+                page: "innerproduct.html"
             },
             {
                 id: 4,
@@ -560,7 +560,7 @@ function getRandomAvatar() {
                 rating: 4.9,
                 image: "img/saree.png",
                 isNew: false,
-                page: "product_details_saree.html"
+                page: "innerproduct.html"
             },
             {
                 id: 5,
@@ -571,7 +571,7 @@ function getRandomAvatar() {
                 rating: 4.8,
                 image: "img/navratri.png",
                 isNew: true,
-                page: "product_details_lehenga.html"
+                page: "innerproduct.html"
             },
             {
                 id: 6,
@@ -582,7 +582,7 @@ function getRandomAvatar() {
                 rating: 4.9,
                 image: "img/gown.png",
                 isNew: false,
-                page: "product_details_ethnic_wear.html"
+                page: "innerproduct.html"
             },
             {
                 id: 7,
@@ -593,7 +593,7 @@ function getRandomAvatar() {
                 rating: 5.0,
                 image: "img/fe1.png",
                 isNew: true,
-                page: "product_details_bridal.html"
+                page: "innerproduct.html"
             },
             {
                 id: 8,
@@ -604,7 +604,7 @@ function getRandomAvatar() {
                 rating: 4.7,
                 image: "img/img_ankit.png",
                 isNew: false,
-                page: "product_details_suit.html"
+                page: "innerproduct.html"
             },
             {
                 id: 9,
@@ -615,7 +615,7 @@ function getRandomAvatar() {
                 rating: 4.9,
                 image: "img/fe6.png",
                 isNew: true,
-                page: "product_details_silk_saree.html"
+                page: "innerproduct.html"
             },
             {
                 id: 10,
@@ -626,7 +626,7 @@ function getRandomAvatar() {
                 rating: 4.5,
                 image: "img/kids_dress.jpg",
                 isNew: true,
-                page: "product_details_kids_dress.html"
+                page: "innerproduct.html"
             },
             {
                 id: 11,
@@ -637,7 +637,7 @@ function getRandomAvatar() {
                 rating: 4.9,
                 image: "img/jewellery1.jpg",
                 isNew: false,
-                page: "product_details_necklace.html"
+                page: "innerproduct.html"
             },
             {
                 id: 12,
@@ -648,7 +648,7 @@ function getRandomAvatar() {
                 rating: 4.6,
                 image: "img/me2.png",
                 isNew: true,
-                page: "product_details_formal_suit.html"
+                page: "innerproduct.html"
             },
             {
                 id: 13,
@@ -659,7 +659,7 @@ function getRandomAvatar() {
                 rating: 4.8,
                 image: "img/jewellery2.jpg",
                 isNew: true,
-                page: "product_details_earrings.html"
+                page: "innerproduct.html"
             },
             {
                 id: 14,
@@ -670,7 +670,7 @@ function getRandomAvatar() {
                 rating: 4.4,
                 image: "img/kids_jeans.jpg",
                 isNew: false,
-                page: "product_details_kids_party.html"
+                page: "innerproduct.html"
             },
             {
                 id: 15,
@@ -681,7 +681,7 @@ function getRandomAvatar() {
                 rating: 4.3,
                 image: "img/me5.png",
                 isNew: true,
-                page: "product_details_shirt.html"
+                page: "innerproduct.html"
             },
             {
                 id: 16,
@@ -692,7 +692,7 @@ function getRandomAvatar() {
                 rating: 5.0,
                 image: "img/jewellery3.jpg",
                 isNew: true,
-                page: "product_details_bridal_jewellery.html"
+                page: "innerproduct.html"
             },
             {
                 id: 17,
@@ -703,7 +703,7 @@ function getRandomAvatar() {
                 rating: 4.7,
                 image: "img/kid5.jpg",
                 isNew: false,
-                page: "product_details_kids_jacket.html"
+                page: "innerproduct.html"
             },
             {
                 id: 18,
@@ -714,7 +714,7 @@ function getRandomAvatar() {
                 rating: 4.6,
                 image: "img/jw4.png",
                 isNew: true,
-                page: "product_details_bracelet.html"
+                page: "innerproduct.html"
             }
         ];
 
@@ -1145,3 +1145,514 @@ function getRandomAvatar() {
             initializeProducts();
             initializeFilterListeners();
         });
+
+  // Product Page Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Thumbnail Image Switching
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            const mainImage = document.getElementById('mainImage');
+
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', function() {
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    mainImage.src = this.dataset.image;
+                });
+            });
+
+            // Wishlist Toggle
+            const wishlistBtn = document.getElementById('wishlistBtn');
+            wishlistBtn.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const icon = this.querySelector('i');
+                if (this.classList.contains('active')) {
+                    icon.classList.remove('far');
+                    icon.classList.add('fas');
+                } else {
+                    icon.classList.remove('fas');
+                    icon.classList.add('far');
+                }
+            });
+
+            // Size Selection
+            const sizeOptions = document.querySelectorAll('.size-option');
+            const sizeLabel = document.querySelector('.size-section .section-label');
+
+            sizeOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    sizeOptions.forEach(o => o.classList.remove('active'));
+                    this.classList.add('active');
+                    sizeLabel.textContent = `Size: ${this.dataset.size}`;
+                });
+            });
+
+            // Quantity Controls
+            const decreaseBtn = document.getElementById('decreaseBtn');
+            const increaseBtn = document.getElementById('increaseBtn');
+            const quantityValue = document.getElementById('quantityValue');
+            const totalPrice = document.getElementById('totalPrice');
+            const basePrice = 2000;
+
+            function updateTotal() {
+                const quantity = parseInt(quantityValue.textContent);
+                const total = basePrice * quantity;
+                totalPrice.textContent = `₹ ${total.toLocaleString()}`;
+            }
+
+            decreaseBtn.addEventListener('click', function() {
+                let quantity = parseInt(quantityValue.textContent);
+                if (quantity > 1) {
+                    quantity--;
+                    quantityValue.textContent = quantity;
+                    updateTotal();
+                }
+            });
+
+            increaseBtn.addEventListener('click', function() {
+                let quantity = parseInt(quantityValue.textContent);
+                quantity++;
+                quantityValue.textContent = quantity;
+                updateTotal();
+            });
+
+            // Tab Switching
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabPanes.forEach(pane => pane.classList.remove('active'));
+                    
+                    this.classList.add('active');
+                    const tabId = this.dataset.tab;
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+
+            // Review Slider Functionality
+            const reviewsContainer = document.querySelector('.reviews-container');
+            const reviewDotsContainer = document.getElementById('reviewDotsContainer');
+            let currentReviewIndex = 0;
+            const reviewsPerSlide = 3;
+
+            // Function to calculate total slides needed
+            function calculateTotalSlides() {
+                const allReviewCards = document.querySelectorAll('.review-card');
+                return Math.ceil(allReviewCards.length / reviewsPerSlide);
+            }
+
+            // Function to update review slider
+            function updateReviewSlider() {
+                const allReviewCards = document.querySelectorAll('.review-card');
+                const totalSlides = calculateTotalSlides();
+                
+                // Hide all review cards first
+                allReviewCards.forEach(card => {
+                    card.style.display = 'none';
+                });
+                
+                // Show only the current slide's review cards
+                const startIndex = currentReviewIndex * reviewsPerSlide;
+                const endIndex = startIndex + reviewsPerSlide;
+                
+                for (let i = startIndex; i < endIndex && i < allReviewCards.length; i++) {
+                    allReviewCards[i].style.display = 'block';
+                }
+                
+                // Update dots
+                const dots = document.querySelectorAll('.review-dot');
+                dots.forEach((dot, index) => {
+                    dot.classList.remove('active');
+                    if (index === currentReviewIndex) {
+                        dot.classList.add('active');
+                    }
+                });
+            }
+
+            // Function to update review dots based on number of reviews
+            function updateReviewDots() {
+                const totalSlides = calculateTotalSlides();
+                
+                // Clear existing dots
+                reviewDotsContainer.innerHTML = '';
+                
+                // Create dots based on total slides needed
+                for (let i = 0; i < totalSlides; i++) {
+                    const dot = document.createElement('div');
+                    dot.className = 'review-dot';
+                    if (i === 0) dot.classList.add('active');
+                    dot.dataset.slide = i;
+                    
+                    dot.addEventListener('click', function() {
+                        currentReviewIndex = i;
+                        updateReviewSlider();
+                    });
+                    
+                    reviewDotsContainer.appendChild(dot);
+                }
+            }
+
+            // Initialize review slider on page load
+            function initializeReviews() {
+                // Show first 3 reviews initially
+                const allReviewCards = document.querySelectorAll('.review-card');
+                allReviewCards.forEach((card, index) => {
+                    if (index < reviewsPerSlide) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                
+                // Initialize dots (2 dots for 6 reviews)
+                updateReviewDots();
+            }
+
+            // Initialize reviews on page load
+            initializeReviews();
+
+            // Auto slide functionality
+            let autoSlideInterval;
+
+            function startAutoSlider() {
+                autoSlideInterval = setInterval(() => {
+                    const totalSlides = calculateTotalSlides();
+                    currentReviewIndex = (currentReviewIndex + 1) % totalSlides;
+                    updateReviewSlider();
+                }, 5000);
+            }
+
+            // Start auto slider
+            startAutoSlider();
+
+            // Pause auto slide on hover
+            reviewsContainer.addEventListener('mouseenter', () => {
+                clearInterval(autoSlideInterval);
+            });
+
+            reviewsContainer.addEventListener('mouseleave', () => {
+                startAutoSlider();
+            });
+
+            // Review Form Functionality
+            const reviewForm = document.getElementById('reviewForm');
+            const starsInput = document.querySelectorAll('.stars-input i');
+            const userRatingInput = document.getElementById('userRating');
+            const selectedRatingText = document.querySelector('.selected-rating-text');
+            const previewBtn = document.getElementById('previewBtn');
+            const previewModal = document.getElementById('previewModal');
+            const previewContent = document.getElementById('previewContent');
+            const closeModal = document.querySelector('.close-modal');
+            const editReviewBtn = document.querySelector('.btn-edit-review');
+            const confirmReviewBtn = document.querySelector('.btn-confirm-review');
+            const totalReviewsSpan = document.getElementById('totalReviews');
+
+            // Track total reviews count
+            let totalReviews = 487162;
+            let currentReviews = 6;
+
+            // Unsplash avatar IDs for random selection
+            const unsplashAvatarIds = [
+                '1494790108755-2616b786d4c7',
+                '1507003211169-0a1dd7228f2d',
+                '1438761681033-6461ffad8d80',
+                '1500648767791-00dcc994a43e',
+                '1544005313-94ddf0286df2',
+                '1506794778202-cad84cf45f1d',
+                '1534528741775-53994a69daeb',
+                '1528892952291-009c663ce843',
+                '1488426862026-3ee34c7ba66',
+                '1472099645785-5658abf4ff4e'
+            ];
+
+            // Function to get random Unsplash avatar
+            function getRandomUnsplashAvatar() {
+                const randomIndex = Math.floor(Math.random() * unsplashAvatarIds.length);
+                return `https://images.unsplash.com/photo-${unsplashAvatarIds[randomIndex]}?w=150&auto=format&fit=crop&q=80`;
+            }
+
+            // Rating stars interaction
+            starsInput.forEach(star => {
+                star.addEventListener('click', function() {
+                    const rating = parseInt(this.dataset.rating);
+                    userRatingInput.value = rating;
+                    
+                    // Update stars display
+                    starsInput.forEach((s, index) => {
+                        if (index < rating) {
+                            s.classList.remove('far');
+                            s.classList.add('fas', 'active');
+                        } else {
+                            s.classList.remove('fas', 'active');
+                            s.classList.add('far');
+                        }
+                    });
+                    
+                    // Update rating text
+                    const ratingTexts = [
+                        "Poor - 1 star",
+                        "Fair - 2 stars",
+                        "Good - 3 stars",
+                        "Very Good - 4 stars",
+                        "Excellent - 5 stars"
+                    ];
+                    selectedRatingText.textContent = ratingTexts[rating - 1];
+                });
+                
+                star.addEventListener('mouseover', function() {
+                    const rating = parseInt(this.dataset.rating);
+                    starsInput.forEach((s, index) => {
+                        if (index < rating) {
+                            s.classList.add('hovered');
+                        }
+                    });
+                });
+                
+                star.addEventListener('mouseout', function() {
+                    starsInput.forEach(s => {
+                        s.classList.remove('hovered');
+                    });
+                });
+            });
+
+            // Preview button functionality
+            previewBtn.addEventListener('click', function() {
+                const firstName = document.getElementById('firstName').value.trim();
+                const lastName = document.getElementById('lastName').value.trim();
+                const rating = userRatingInput.value;
+                const comment = document.getElementById('comment').value.trim();
+                
+                // Validation
+                if (!firstName || !lastName || !comment) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+                
+                if (rating === '0') {
+                    alert('Please select a rating.');
+                    return;
+                }
+                
+                // Generate avatar initials
+                const initials = (firstName.charAt(0) + lastName.charAt(0)).toUpperCase();
+                
+                // Generate stars HTML
+                let starsHtml = '';
+                for (let i = 1; i <= 5; i++) {
+                    if (i <= rating) {
+                        starsHtml += '<i class="fas fa-star"></i>';
+                    } else {
+                        starsHtml += '<i class="far fa-star star-empty"></i>';
+                    }
+                }
+                
+                // Create preview HTML
+                const previewHtml = `
+                    <div class="preview-review-card">
+                        <div class="preview-review-header">
+                            <div class="preview-reviewer-avatar">${initials}</div>
+                            <div class="preview-reviewer-info">
+                                <h6>${firstName} ${lastName}</h6>
+                                <div class="preview-review-rating">
+                                    ${starsHtml}
+                                </div>
+                            </div>
+                        </div>
+                        <p class="preview-review-text">"${comment}"</p>
+                        <div class="preview-timestamp">Preview - Will be posted immediately after submission</div>
+                    </div>
+                    <p class="text-center text-muted">This is how your review will appear. Click "Submit Review" to post it.</p>
+                `;
+                
+                // Insert preview HTML
+                previewContent.innerHTML = previewHtml;
+                
+                // Show modal
+                previewModal.classList.add('active');
+            });
+
+            // Close modal
+            closeModal.addEventListener('click', function() {
+                previewModal.classList.remove('active');
+            });
+
+            // Edit review button
+            editReviewBtn.addEventListener('click', function() {
+                previewModal.classList.remove('active');
+            });
+
+            // Confirm and submit review
+            confirmReviewBtn.addEventListener('click', function() {
+                const firstName = document.getElementById('firstName').value.trim();
+                const lastName = document.getElementById('lastName').value.trim();
+                const rating = parseInt(userRatingInput.value);
+                const comment = document.getElementById('comment').value.trim();
+                
+                // Get random Unsplash avatar
+                const avatarUrl = getRandomUnsplashAvatar();
+                
+                // Generate stars HTML
+                let starsHtml = '';
+                for (let i = 1; i <= 5; i++) {
+                    if (i <= rating) {
+                        starsHtml += '<i class="fas fa-star"></i>';
+                    } else {
+                        starsHtml += '<i class="far fa-star star-empty"></i>';
+                    }
+                }
+                
+                // Create new review element
+                const newReview = document.createElement('div');
+                newReview.className = 'review-card';
+                newReview.innerHTML = `
+                    <div class="review-header">
+                        <div class="reviewer-avatar" style="background-image: url('${avatarUrl}');"></div>
+                        <div class="reviewer-info">
+                            <h6>${firstName} ${lastName}</h6>
+                            <div class="review-rating">
+                                ${starsHtml}
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">"${comment}"</p>
+                `;
+                
+                // Add new review to the beginning of the reviews container
+                const reviewsContainer = document.querySelector('.reviews-container');
+                reviewsContainer.insertBefore(newReview, reviewsContainer.firstChild);
+                
+                // Increment counters
+                currentReviews++;
+                totalReviews += Math.floor(Math.random() * 1000) + 50;
+                
+                // Update total reviews count
+                totalReviewsSpan.textContent = totalReviews.toLocaleString();
+                
+                // Update average rating
+                updateAverageRating(rating);
+                
+                // Reset form
+                reviewForm.reset();
+                starsInput.forEach(star => {
+                    star.classList.remove('fas', 'active');
+                    star.classList.add('far');
+                });
+                userRatingInput.value = '0';
+                selectedRatingText.textContent = 'Click stars to rate';
+                
+                // Close modal
+                previewModal.classList.remove('active');
+                
+                // Show success message
+                showSuccessMessage('Thank you! Your review has been posted successfully.');
+                
+                // Update review slider and dots
+                updateReviewSlider();
+                updateReviewDots();
+                
+                // Restart auto slider with new timing
+                clearInterval(autoSlideInterval);
+                startAutoSlider();
+            });
+
+            // Form submit handler
+            reviewForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                confirmReviewBtn.click();
+            });
+
+            // Function to update average rating
+            function updateAverageRating(newRating) {
+                // Get current average from the main stars
+                const mainStars = document.querySelector('.reviews-header .stars');
+                const currentFullStars = mainStars.querySelectorAll('.fa-star:not(.far)').length;
+                const currentHalfStar = mainStars.querySelector('.fa-star-half-alt') ? 0.5 : 0;
+                const currentAvg = currentFullStars + currentHalfStar;
+                
+                // Calculate new average (weighted average)
+                const newAvg = (currentAvg * (currentReviews - 1) + newRating) / currentReviews;
+                
+                // Update main stars display
+                updateMainRatingStars(newAvg);
+            }
+
+            // Helper function to update main rating stars
+            function updateMainRatingStars(newRating) {
+                const mainStars = document.querySelector('.reviews-header .stars');
+                mainStars.innerHTML = '';
+                
+                const fullStars = Math.floor(newRating);
+                const hasHalfStar = newRating % 1 >= 0.3;
+                
+                for (let i = 1; i <= 5; i++) {
+                    const star = document.createElement('i');
+                    if (i <= fullStars) {
+                        star.className = 'fas fa-star';
+                    } else if (i === fullStars + 1 && hasHalfStar) {
+                        star.className = 'fas fa-star-half-alt';
+                    } else {
+                        star.className = 'far fa-star star-empty';
+                    }
+                    mainStars.appendChild(star);
+                }
+            }
+
+            // Helper function to show success message
+            function showSuccessMessage(message) {
+                const successMsg = document.createElement('div');
+                successMsg.className = 'alert-success-review';
+                successMsg.innerHTML = `
+                    <i class="fas fa-check-circle"></i>
+                    <span>${message}</span>
+                `;
+                
+                successMsg.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: #28a745;
+                    color: white;
+                    padding: 15px 25px;
+                    border-radius: 10px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                    z-index: 9999;
+                    animation: slideInRight 0.3s ease, fadeOut 0.3s ease 3s forwards;
+                `;
+                
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes slideInRight {
+                        from { transform: translateX(100%); opacity: 0; }
+                        to { transform: translateX(0); opacity: 1; }
+                    }
+                    @keyframes fadeOut {
+                        from { opacity: 1; }
+                        to { opacity: 0; }
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                document.body.appendChild(successMsg);
+                
+                setTimeout(() => {
+                    if (successMsg.parentNode) {
+                        successMsg.parentNode.removeChild(successMsg);
+                    }
+                }, 3300);
+            }
+
+            // Reset form button functionality
+            document.querySelector('.btn-reset-review').addEventListener('click', function() {
+                starsInput.forEach(star => {
+                    star.classList.remove('fas', 'active');
+                    star.classList.add('far');
+                });
+                userRatingInput.value = '0';
+                selectedRatingText.textContent = 'Click stars to rate';
+            });
+        }); 
+ 

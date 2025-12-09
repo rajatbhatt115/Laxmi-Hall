@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree Laxmi Mall - Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4"><i class="fas fa-shipping-fast"></i> Free Shipping</div>
+                <div class="col-md-4 text-center"><i class="fas fa-phone"></i> +123 456 789</div>
+                <div class="col-md-4 text-end"><i class="fas fa-envelope"></i> support@mail.com</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <div class="logo-circle">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <div>
+                    <strong>SHREE LAXMI</strong><br>
+                    <small>MALL</small>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex">
+                    <a href="#" class="nav-link"><i class="fas fa-search"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-heart"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center cloth">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <p>VISIT ALL OF OUR PRODUCTS</p>
+                        <h1>
+                            <span>Product Details</span>
+                        </h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.</p>
+                        <!-- <button class="btn-read-more">Shop Now</button> -->
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image-shop">
+                        <img src="img/img_banner_shop.png" class="my-img" style="width: 65%; height: auto;"
+                            alt="About Us Banner">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <!-- Product Detail Section -->
+    <section class="product-detail-section">
+    <div class="container">
+        <div class="row">
+            <!-- Product Images -->
+            <div class="col-lg-6">
+                <div class="main-product-image">
+                    <!-- Main large image -->
+                    <img src="./img/img_lg1.png" alt="Dress" id="mainImage">
+                    <button class="wishlist-btn" id="wishlistBtn">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                <div class="thumbnail-container">
+                    <!-- Thumbnail 1 -->
+                    <div class="thumbnail active" data-image="./img/img_lg1.png">
+                        <img src="./img/img_sm1.png" alt="View 1">
+                    </div>
+                    <!-- Thumbnail 2 -->
+                    <div class="thumbnail" data-image="./img/img_lg2.png">
+                        <img src="./img/img_sm2.png" alt="View 2">
+                    </div>
+                    <!-- Thumbnail 3 -->
+                    <div class="thumbnail" data-image="./img/img_lg3.png">
+                        <img src="./img/img_sm3.png" alt="View 3">
+                    </div>
+                </div>
+            </div>
+
+                <!-- Product Info -->
+                <div class="col-lg-6">
+                    <div class="product-info-container">
+                        <h1 class="product-name">Women's Summer Dress</h1>
+
+                        <div class="product-price-box">
+                            <div class="product-price">₹ 2000</div>
+                        </div>
+
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star star-empty"></i>
+                            </div>
+                            <span class="rating-text">(4.9)</span>
+                        </div>
+
+                        <!-- Size Selection -->
+                        <div class="size-section">
+                            <div class="section-label">Size: XS</div>
+                            <div class="size-options">
+                                <button class="size-option active" data-size="XS">XS</button>
+                                <button class="size-option" data-size="S">S</button>
+                                <button class="size-option" data-size="M">M</button>
+                                <button class="size-option" data-size="L">L</button>
+                                <button class="size-option" data-size="XL">XL</button>
+                                <button class="size-option" data-size="XXL">XXL</button>
+                            </div>
+                        </div>
+
+                        <!-- Quantity Selection -->
+                        <div class="quantity-section">
+                            <div class="quantity-controls">
+                                <button class="quantity-btn" id="decreaseBtn">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <span class="quantity-value" id="quantityValue">2</span>
+                                <button class="quantity-btn" id="increaseBtn">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                                <span class="total-price" id="totalPrice">₹ 4000</span>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="action-buttons">
+                            <button class="btn-buy-now">Buy Now</button>
+                            <button class="btn-add-cart">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabs Section -->
+            <div class="product-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="details">Product Details</button>
+                    <button class="tab-btn" data-tab="reviews">Reviews</button>
+                </div>
+            </div>
+
+            <div class="tab-content">
+                <!-- Product Details Tab -->
+                <div class="tab-pane active" id="details">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+                        but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                        popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                        and more recently with desktop publishing software like Aldus PageMaker including versions of
+                        Lorem Ipsum.</p>
+
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page
+                        when looking at its layout.</p>
+
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                        alteration in some form, by injected humour, or randomised words which don't look even slightly
+                        believable.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute dolor in reprehenderit in voluptate
+                        velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </div>
+
+                <!-- Reviews Tab -->
+                <div class="tab-pane" id="reviews">
+                    <div class="reviews-header">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star star-empty"></i>
+                        </div>
+                        <span class="reviews-count">(4.9) • <span id="totalReviews">4,87,162</span> Reviews</span>
+                    </div>
+
+                    <!-- Reviews Container with 6 initial reviews -->
+                    <div class="reviews-container">
+                        <!-- Review 1 -->
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="reviewer-avatar" style="background-image: url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+                                <div class="reviewer-info">
+                                    <h6>Priya Sharma</h6>
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star star-empty"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="review-text">"Excellent quality! The dress fits perfectly and the fabric is very comfortable. I've received so many compliments!"</p>
+                        </div>
+
+                        <!-- Review 2 -->
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="reviewer-avatar" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80');"></div>
+                                <div class="reviewer-info">
+                                    <h6>Rahul Verma</h6>
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="review-text">"Best purchase ever! The stitching is excellent and the color looks exactly like in the picture. Very fast delivery too!"</p>
+                        </div>
+
+                        <!-- Review 3 -->
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="reviewer-avatar" style="background-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&auto=format&fit=crop&q=80');"></div>
+                                <div class="reviewer-info">
+                                    <h6>Anjali Patel</h6>
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star star-empty"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="review-text">"Love this dress! Perfect for summer parties. The quality exceeded my expectations. Will definitely buy again."</p>
+                        </div>
+
+                        <!-- Review 4 -->
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="reviewer-avatar" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80');"></div>
+                                <div class="reviewer-info">
+                                    <h6>Vikram Singh</h6>
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star star-empty"></i>
+                                        <i class="far fa-star star-empty"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="review-text">"Good quality fabric, but the size was slightly smaller than expected. Would recommend ordering one size up."</p>
+                        </div>
+
+                        <!-- Review 5 -->
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="reviewer-avatar" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80');"></div>
+                                <div class="reviewer-info">
+                                    <h6>Neha Gupta</h6>
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star star-empty"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="review-text">"Beautiful design and perfect for office wear. The material is breathable and doesn't wrinkle easily."</p>
+                        </div>
+
+                        <!-- Review 6 -->
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="reviewer-avatar" style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&auto=format&fit=crop&q=80');"></div>
+                                <div class="reviewer-info">
+                                    <h6>Raj Malhotra</h6>
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="review-text">"Perfect fit and amazing quality! I've ordered 3 more dresses from this store. Highly recommended!"</p>
+                        </div>
+                    </div>
+
+                    <!-- Review Slider Dots - Initially 2 dots for 6 reviews -->
+                    <div class="review-dots" id="reviewDotsContainer">
+                        <div class="review-dot active" data-slide="0"></div>
+                        <div class="review-dot" data-slide="1"></div>
+                    </div>
+                    
+                    <!-- Add Comment Form -->
+                     <div class="row d-flex justify-content-center align-items-center">
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="add-review-form">
+                        <h3 class="form-title">Add Your Review</h3>
+                        <form id="reviewForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="firstName" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="lastName" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" placeholder="Enter your last name" required>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Your Rating</label>
+                                <div class="rating-stars-input">
+                                    <div class="stars-input">
+                                        <i class="far fa-star" data-rating="1"></i>
+                                        <i class="far fa-star" data-rating="2"></i>
+                                        <i class="far fa-star" data-rating="3"></i>
+                                        <i class="far fa-star" data-rating="4"></i>
+                                        <i class="far fa-star" data-rating="5"></i>
+                                    </div>
+                                    <span class="selected-rating-text">Click stars to rate</span>
+                                    <input type="hidden" id="userRating" value="0">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="comment" class="form-label">Your Review</label>
+                                <textarea class="form-control" id="comment" rows="4" placeholder="Share your experience with this product..." required></textarea>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button type="submit" class="btn-submit-review">
+                                    <i class="fas fa-paper-plane"></i> Post Your Comment
+                                </button>
+                                <div class="form-actions">
+                                    <button type="button" class="btn-preview-review" id="previewBtn">
+                                        <i class="fas fa-eye"></i> Preview
+                                    </button>
+                                    <button type="reset" class="btn-reset-review">
+                                        <i class="fas fa-redo"></i> Reset
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        
+                        <!-- Review Preview Modal -->
+                        <div class="review-preview-modal" id="previewModal">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5>Review Preview</h5>
+                                    <button class="close-modal">&times;</button>
+                                </div>
+                                <div class="modal-body" id="previewContent">
+                                    <!-- Preview content will be inserted here -->
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn-edit-review">Edit</button>
+                                    <button class="btn-confirm-review">Submit Review</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12"  style="text-align: right;">
+                            <img src="img/img_comment.png" alt="">
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="navbar-brand text-white mb-3">
+                        <div class="logo-circle" style="background-color: #fff;">
+                            <i class="fas fa-shopping-bag" style="color: #FF7E00;"></i>
+                        </div>
+                        <div>
+                            <strong>SHREE LAXMI</strong><br>
+                            <small>MALL</small>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.</p>
+                </div>
+                <div class="col-md-2">
+                    <h5>Shop</h5>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Checkout</a></li>
+                        <li><a href="#">Cart</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact</h5>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Street Name, City, Country</p>
+                    <p><i class="fas fa-phone"></i> +123 456 789</p>
+                    <p><i class="fas fa-envelope"></i> info@example.com</p>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.3);">
+            <div class="text-center">
+                <p style="margin-bottom: 0rem !important;">&copy; 2023 Shree Laxmi Mall. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
