@@ -1655,4 +1655,99 @@ function getRandomAvatar() {
                 selectedRatingText.textContent = 'Click stars to rate';
             });
         }); 
+
+   let itemToDelete = null;
+
+// Update price based on quantity
+function updatePrice(item) {
+    const quantityValue = item.querySelector('.quantity-value');
+    const priceTag = item.querySelector('.price-tag');
+    const unitPrice = parseInt(priceTag.getAttribute('data-unit-price'));
+    const quantity = parseInt(quantityValue.textContent);
+    const totalPrice = unitPrice * quantity;
+    priceTag.textContent = `₹ ${totalPrice}`;
+}
+
+// Increase quantity
+function increaseQuantity(btn) {
+    const item = btn.closest('.wishlist-item');
+    const quantityValue = btn.previousElementSibling;
+    let currentValue = parseInt(quantityValue.textContent);
+    quantityValue.textContent = currentValue + 1;
+    updatePrice(item);
+}
+
+// Decrease quantity
+function decreaseQuantity(btn) {
+    const item = btn.closest('.wishlist-item');
+    const quantityValue = btn.nextElementSibling;
+    let currentValue = parseInt(quantityValue.textContent);
+    if (currentValue > 1) {
+        quantityValue.textContent = currentValue - 1;
+        updatePrice(item);
+    }
+}
+
+// Show delete confirmation modal
+function showDeleteConfirmation(btn) {
+    itemToDelete = btn.closest('.wishlist-item');
+    document.getElementById('deleteConfirmationModal').classList.add('show');
+}
+
+// Close delete modal
+function closeDeleteModal() {
+    document.getElementById('deleteConfirmationModal').classList.remove('show');
+    itemToDelete = null;
+}
+
+// Confirm delete (remove item from list)
+function confirmDelete() {
+    if (itemToDelete) {
+        itemToDelete.remove();
+        checkEmptyWishlist();
+    }
+    closeDeleteModal();
+}
+
+// Close modal when clicking outside
+document.getElementById('deleteConfirmationModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeDeleteModal();
+    }
+});
+
+// Move to cart
+function moveToCart(btn) {
+    if (btn.disabled) return;
+    
+    const item = btn.closest('.wishlist-item');
+    const productName = item.querySelector('.wishlist-details h5').textContent;
+    const quantity = item.querySelector('.quantity-value').textContent;
+    
+    alert(`${productName} (Qty: ${quantity}) has been moved to your cart!`);
+}
+
+// Check if wishlist is empty
+function checkEmptyWishlist() {
+    const wishlistContainer = document.getElementById('wishlistContainer');
+    const emptyWishlist = document.getElementById('emptyWishlist');
+    const items = wishlistContainer.querySelectorAll('.wishlist-item');
+    
+    if (items.length === 0) {
+        emptyWishlist.classList.add('show');
+    } else {
+        emptyWishlist.classList.remove('show');
+    }
+}
+
+// Initial check
+checkEmptyWishlist();
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeDeleteModal();
+    }
+});     
+
  
